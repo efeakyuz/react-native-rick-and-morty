@@ -34,6 +34,7 @@ export default StyleSheet.create({
   },
   column: {
     flex: 1,
+    overflow: "hidden",
     flexDirection: "column",
     justifyContent: "flex-start",
     margin: 10,

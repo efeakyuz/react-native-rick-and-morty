@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FlatList, Pressable, Text, View } from "react-native";
+import { Alert, FlatList, Pressable, Text, View } from "react-native";
 import style from "../content/style/style";
 import { API_URL } from "../constants";
 
@@ -19,15 +19,20 @@ const Location = ({ navigation }) => {
       const resident = r.split("/");
       return resident[resident.length - 1];
     });
-    const requestUrl = `${API_URL}/character/${characterIds.join(",")}`;
-    axios
-      .get(requestUrl)
-      .then(({ data } = response) => {
-        navigation.navigate("Characters", {
-          characters: location.residents.length === 1 ? Array.of(data) : data,
-        });
-      })
-      .catch((error) => console.error(error));
+
+    if (location.residents.length < 1) {
+      Alert.alert("No Residents Living");
+    } else {
+      const requestUrl = `${API_URL}/character/${characterIds.join(",")}`;
+      axios
+        .get(requestUrl)
+        .then(({ data } = response) => {
+          navigation.navigate("Characters", {
+            characters: location.residents.length === 1 ? Array.of(data) : data,
+          });
+        })
+        .catch((error) => console.error(error));
+    }
   };
 
   return (

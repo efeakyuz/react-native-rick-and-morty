@@ -1,7 +1,6 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Main from "./src/components/Main";
 import Characters from "./src/components/Characters";
 import { StatusBar } from "expo-status-bar";
 import Location from "./src/components/Location";
