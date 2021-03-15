@@ -4,8 +4,6 @@ import style from "../content/style/style";
 
 const Characters = ({ route }) => {
   const { characters } = route.params;
-
-  console.log("🚀 ~ file: Characters.jsx ~ line 7 ~ Characters ~ characters", characters.length)
   
 
   const getStatus = (status) => {
