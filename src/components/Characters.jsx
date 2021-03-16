@@ -5,9 +5,6 @@ import style from "../content/style/style";
 const Characters = ({ route }) => {
   const { characters } = route.params;
 
-  console.log("🚀 ~ file: Characters.jsx ~ line 7 ~ Characters ~ characters", characters.length)
-  
-
   const getStatus = (status) => {
     if (status === "Alive") {
       return style.textAlive;
@@ -46,7 +43,7 @@ const Characters = ({ route }) => {
                 <Text style={[style.text, { paddingBottom: 3 }]}>
                   {item.location.name}
                 </Text>
-                <Text style={style.textUnk}>First senn in:</Text>
+                <Text style={style.textUnk}>First seen in:</Text>
                 <Text style={style.text}>{item.origin.name}</Text>
               </View>
             </View>
