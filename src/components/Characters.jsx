@@ -4,6 +4,7 @@ import style from "../content/style/style";
 
 const Characters = ({ route }) => {
   const { characters } = route.params;
+  
 
   const getStatus = (status) => {
     if (status === "Alive") {
